@@ -1,0 +1,56 @@
+import { MCPConfiguration } from "@mastra/mcp";
+
+const mcp = new MCPConfiguration({
+  servers: {
+    duckduckgo: {
+      command: "uvx",
+      args: ["duckduckgo-mcp-server"],
+    },
+    browserUse: {
+      command: "uvx",
+      args: ["mcp-server-browser-use"],
+      env: {
+        OPENROUTER_API_KEY: "",
+        OPENROUTER_ENDPOINT: "https://openrouter.ai/api/v1",
+        OPENAI_ENDPOINT: "https://api.openai.com/v1",
+        OPENAI_API_KEY: "",
+        ANTHROPIC_ENDPOINT: "https://api.anthropic.com",
+        ANTHROPIC_API_KEY: "",
+        GOOGLE_API_KEY: process.env.GOOGLE_GENERATIVE_AI_API_KEY!,
+        AZURE_OPENAI_ENDPOINT: "",
+        AZURE_OPENAI_API_KEY: "",
+        DEEPSEEK_ENDPOINT: "https://api.deepseek.com",
+        DEEPSEEK_API_KEY: "",
+        MISTRAL_API_KEY: "",
+        MISTRAL_ENDPOINT: "https://api.mistral.ai/v1",
+        OLLAMA_ENDPOINT: "http://localhost:11434",
+        ANONYMIZED_TELEMETRY: "true",
+        BROWSER_USE_LOGGING_LEVEL: "info",
+        CHROME_PATH: "",
+        CHROME_USER_DATA: "",
+        CHROME_DEBUGGING_PORT: "9222",
+        CHROME_DEBUGGING_HOST: "localhost",
+        CHROME_PERSISTENT_SESSION: "false",
+        BROWSER_HEADLESS: "false",
+        BROWSER_DISABLE_SECURITY: "false",
+        BROWSER_WINDOW_WIDTH: "1280",
+        BROWSER_WINDOW_HEIGHT: "720",
+        BROWSER_TRACE_PATH: "trace.json",
+        BROWSER_RECORDING_PATH: "recording.mp4",
+        RESOLUTION: "1920x1080x24",
+        RESOLUTION_WIDTH: "1920",
+        RESOLUTION_HEIGHT: "1080",
+        VNC_PASSWORD: "youvncpassword",
+        MCP_MODEL_PROVIDER: "gemini",
+        MCP_MODEL_NAME: "gemini-2.0-flash",
+        MCP_TEMPERATURE: "0.3",
+        MCP_MAX_STEPS: "30",
+        MCP_USE_VISION: "true",
+        MCP_MAX_ACTIONS_PER_STEP: "5",
+        MCP_TOOL_CALL_IN_CONTENT: "true",
+      },
+    },
+  },
+});
+
+export default mcp;
