@@ -27,7 +27,7 @@ export const weatherAgent = new Agent({
   `,
   model: google('gemini-2.0-flash'),
   tools: {
-    // ...(await mcp.getTools()),
+    ...(await mcp.getTools()),
     planning: planningTools,
     fileSave: fileSaveTool,
     fileRead: fileReadTool,
